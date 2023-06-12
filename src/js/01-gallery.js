@@ -36,18 +36,16 @@ function onClick(evt) {
 
     instance.show()
 
-    const visible = basicLightbox.visible()
-
-    if (visible) {
         document.addEventListener("keydown", onKey);
 
     function onKey(evt) {
     
     if (evt.code === "Escape") {
-        instance.close() 
+        instance.close();
+         document.removeEventListener("keydown", onKey);
     }
     }
-    document.removeEventListener("keydown", onKey);
+   
 }
-}
+
 
